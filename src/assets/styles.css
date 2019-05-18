@@ -1,0 +1,859 @@
+/* Gastro Surge Care
+   Plan-a.co.in
+   Ankit Patil (anankitpatil@gmail.com) */
+
+/* Google fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Assistant:400,600,700|Heebo:300,400,500,700');
+* {
+  font-family: 'Heebo', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Assistant', sans-serif;
+}
+/* Global */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+body.noscroll {
+  overflow: hidden;
+}
+.container {
+  width: calc(100% - 30px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  overflow: auto;
+}
+.home, .page {
+  transition: opacity 600ms ease;
+}
+.router-enter, .router-enter-active {
+  opacity: 0;
+}
+.router-leave-active {
+  opacity: 0;
+}
+/* Navigation */
+
+.sub-nav {
+  width: 100%;
+  border-bottom: 1px solid #EEE;
+}
+.sub-nav a {
+  color: #AAA;
+  text-decoration: none;
+  display: inline-block;
+  padding-right: 30px;
+  font-size: 15px;
+  line-height: 42px;
+}
+.sub-nav a:first-of-type {
+  font-weight: bold;
+}
+.sub-nav .social {
+  padding-right: 0;
+  padding-left: 15px;
+  float: right;
+  height: 42px;
+}
+.sub-nav .social svg {
+  height: 18px;
+  width: auto;
+  vertical-align: middle;
+}
+nav {
+  padding: 21px 0 15px;
+}
+nav .container {
+  width: calc(100% - 30px);
+}
+nav .logo {
+  display: inline-block;
+  height: 90px;
+}
+nav .logo img {
+  height: 90px;
+  width: auto;
+}
+nav .logo span {
+  display: inline-block;
+  vertical-align: top;
+  font-family: 'Signika', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #555;
+  font-size: 21px;
+  line-height: 30px;
+  padding: 14px 0 14px 18px;
+}
+nav .logo span .light {
+  font-weight: 400;
+  padding: 0;
+}
+nav .logo span .lighter {
+  font-weight: 300;
+  padding: 0;
+}
+nav .menu, nav .menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav .menu {
+  float: right;
+  margin: 33px 0;
+}
+nav .menu>li {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 30px;
+}
+nav .menu ul {
+  position: absolute;
+  opacity: 0;
+  border: 1px solid #EEE;
+  margin-left: -15px;
+  pointer-events: none;
+}
+nav .menu>li:hover ul {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 2;
+  padding-top: 9px;
+  background: #FFF;
+}
+nav .menu li a, .burger-menu li a {
+  text-decoration: none;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+nav .menu li a:hover {
+  color: #3271eb;
+}
+nav .menu ul li {
+  padding: 10px 15px;
+  min-width: 96px;
+}
+.burger-btn {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 54px;
+  z-index: 9999;
+}
+.burger-btn span {
+  display: block;
+  width: 27px;
+  height: 2px;
+  margin-bottom: 6px;
+  background: #555;
+}
+.burger-menu {
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: -100vh;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: table;
+  z-index: 9998;
+}
+.burger-menu.open {
+  top: 0;
+}
+.burger-menu>ul {
+  vertical-align: middle;
+  display: table-cell;
+}
+.burger-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.burger-menu li {
+  text-align: center;
+}
+.burger-menu>ul>li>a {
+  font-size: 18px;
+}
+.burger-menu li>ul {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* Home page */
+
+.home {
+  position: relative;
+}
+.above-carousel {
+  width: 100%;
+  transform: translateX(0px);
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.84);
+}
+.above-carousel .container>div {
+  width: calc(33.3333333333% - 30px);
+  float: left;
+  padding: 15px;
+}
+.above-carousel .container>div svg {
+  width: 48px;
+  height: 48px;
+  margin-right: 15px;
+  float: left;
+}
+.above-carousel .container>div svg path, .above-carousel .container>div svg rect, .above-carousel .container>div svg circle {
+  fill: #3271eb;
+}
+.above-carousel .container>div span {
+  line-height: 27px;
+  font-size: 13px;
+  color: #888;
+}
+.above-carousel .container>div span a {
+  text-decoration: none;
+  color: #555;
+}
+.above-carousel .container>div span a:hover {
+  color: #3271eb;
+}
+.above-carousel .container>div span b {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+}
+.home-carousel {
+  margin-top: -84px;
+  z-index: 0;
+}
+.home-carousel .VueCarousel-slide>img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.home-carousel .VueCarousel-slide>div {
+  width: 100%;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+.home-carousel .VueCarousel-slide>div h1 {
+  font-size: 60px;
+  line-height: 81px;
+  font-weight: 600;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.home-carousel .VueCarousel-slide>div h1 b {
+  font-weight: 700;
+}
+.below-carousel {
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  animation: Gradient 30s ease infinite;
+  border-radius: 3px;
+  margin-top: -69px;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+.below-carousel>div {
+  width: calc(33.3333333333% - 15px);
+  float: left;
+  padding: 45px 0 39px 15px;
+}
+.below-carousel>div svg {
+  width: 48px;
+  height: 48px;
+  margin-right: 15px;
+}
+.below-carousel>div span {
+  line-height: 27px;
+  font-size: 15px;
+  color: #FFF;
+  display: inline-block;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  width: calc(100% - 73px);
+  vertical-align: top;
+}
+.below-carousel>div:last-child span {
+  border-right: 0;
+}
+.below-carousel>div span b {
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: normal;
+}
+.below-carousel>div svg .icon-fill {
+  fill: #FFF;
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+.about-doctor h1, .expertise h1, .treatments h1, .appointment h1 {
+  font-size: 48px;
+  margin: 90px 0 90px;
+}
+.about-doctor .padded, .expertise .padded, .treatments .padded, .appointment .padded, .page .content .padded {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+.about-doctor img {
+  width: 33.3333333333%;
+  height: auto;
+  float: left;
+}
+.about-doctor .content {
+  width: calc(66.6666666666% - 60px);
+  float: left;
+  padding-left: 60px;
+}
+.about-doctor .content p, .expertise .content p {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 36px;
+  color: #555;
+  margin-top: 60px;
+}
+.about-doctor .content p b, .expertise .content p b {
+  font-weight: 400;
+}
+.statistics .container>div {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.statistics {
+  width: 100%;
+  background: #3271eb;
+  margin-top: 90px;
+}
+.statistics .container>div svg {
+  width: 60px;
+  height: 60px;
+  margin-top: 60px;
+  display: inline-block;
+}
+.statistics .container>div svg .icon-fill {
+  fill: #FFF;
+}
+.statistics .container>div span {
+  display: block;
+}
+.statistics .container>div h2 {
+  font-size: 36px;
+  letter-spacing: 1px;
+  color: #FFF;
+}
+.statistics .container>div h2 span {
+  font-size: 21px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 48px;
+}
+.expertise:last-child {
+  padding-bottom: 90px;
+}
+.expertise .padded {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.expertise .padded>div {
+  width: calc(33.3333333333% - 30px);
+  padding: 0 15px;
+  float: left;
+}
+.expertise .padded>div img {
+  width: calc(100% - 2px);
+  display: block;
+  border: 1px solid #f7f7f7;
+}
+.expertise h3 {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 15px;
+  background: #f7f7f7;
+  margin: 0;
+}
+.expertise ul {
+  padding-left: 24px;
+  background: #f7f7f7;
+  margin-top: 0;
+  color: #555;
+  font-weight: 300;
+  list-style-type: none;
+  font-size: 21px;
+  line-height: 36px;
+  padding-bottom: 25px;
+}
+.expertise ul li:not(.empty):before {
+  font-family: 'Heebo', sans-serif;
+  margin-right: 15px;
+  font-weight: 500;
+  content: "\003E";
+  color: #3271eb;
+}
+.treatments {
+  padding-bottom: 90px;
+}
+.treatments .padded>a {
+  width: calc(50% - 30px);
+  padding-right: 60px;
+  float: left;
+  text-decoration: none;
+  color: #000;
+}
+.treatments .padded>a:last-child {
+  padding-right: 0;
+}
+.treatments .padded>a>div {
+  width: 100%;
+  overflow: hidden;
+}
+.treatments .padded>a>div>img {
+  width: 100%;
+  transition: all 1000ms ease;
+  display: block;
+}
+.treatments .padded>a:hover>div>img {
+  transform: scale(1.06);
+}
+.treatments h3 {
+  font-size: 30px;
+  font-weight: 600;
+}
+.treatments p {
+  font-size: 21px;
+  line-height: 36px;
+  font-weight: 300;
+  color: #555;
+}
+.treatments p b {
+  font-weight: 400;
+}
+.appointment {
+  background: #f2f2f2;
+}
+.appointment form {
+  overflow: auto;
+}
+.appointment form>div {
+  width: calc(50% - 30px);
+  padding-right: 60px;
+  float: left;
+}
+.appointment form>div:last-child {
+  padding-right: 0;
+}
+.appointment form input {
+  background: none;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid #3271eb;
+  width: calc(100% - 4px);
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+.appointment input[type=number]::-webkit-inner-spin-button, .appointment input[type=number]::-webkit-outer-spin-button, .page-contact .content .starting-value input[type=number]::-webkit-inner-spin-button, .page-contact .content .starting-value input[type=number]::-webkit-outer-spin-button, .page-appointment form input[type=number]::-webkit-inner-spin-button, .page-appointment form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.appointment form button[type="submit"] {
+  float: right;
+  font-size: 21px;
+  line-height: 48px;
+  padding: 3px 30px 0 30px;
+  background: #3271eb;
+  color: #FFF;
+  border: 0;
+  margin-top: 30px;
+  margin-bottom: 90px;
+  border-radius: 2px;
+}
+/* All pages */
+
+.page .container>h1:first-child {
+  font-size: 48px;
+  margin: 162px 0 90px;
+}
+.page .page-banner {
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  margin-top: -84px;
+}
+.page-expertise .page-banner, .page-treatments .page-banner, .page-about .page-banner, .page-contact .page-banner, .page-appointment .page-banner {
+  background-image: url("../assets/gastro-banner-1.jpg");
+}
+.page .content {
+  margin-bottom: 60px;
+}
+.page .content img.inline {
+  float: left;
+  margin-right: 45px;
+  margin-bottom: 15px;
+  max-width: 100%;
+  height: auto;
+}
+.page .content img.inline.right {
+  float: right;
+  margin-right: 0;
+  margin-left: 15px;
+}
+.page .content h2 {
+  margin: 60px 0;
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: 600;
+}
+.page .content h3 {
+  font-size: 27px;
+  margin: 30px 0;
+}
+.page .content ul {
+  list-style-type: decimal;
+}
+.page .content .padded {
+  overflow: auto;
+}
+.page .content .padded p, .page .content ul {
+  font-size: 18px;
+  line-height: 27px;
+  color: #555;
+}
+.page .content ul ul {
+  list-style-type: lower-latin;
+}
+.page .sub-links {
+  display: block;
+  padding: 60px 0 30px;
+  text-align: center;
+}
+.page .sub-links a {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+}
+.page .sub-links a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+.page .sub-links a:nth-child(2) {
+  margin-left: 180px;
+}
+.page .three-col {
+  overflow: auto;
+}
+.page .three-col>div {
+  width: calc(33.33333333333% - 30px);
+  padding: 0 15px;
+  float: left;
+  text-align: center;
+}
+.page .three-col>div img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+.page-treatments .content ul {
+  list-style-type: disc;
+}
+.page-about .content {
+  padding-top: 90px;
+}
+.page-about .content .starting-name, .page-about .content .starting-value {
+  width: 50%;
+  float: left;
+}
+.page-about .content .starting-name p {
+  color: #3271eb;
+  font-family: 'Assistant', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+.page-about .content .starting-value p {
+  font-size: 18px;
+  line-height: 27px;
+}
+.page-about .content .starting-value a {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.page-about .content>.padded:not(:first-child) {
+  margin-top: 60px;
+}
+.page-about .content>.padded>p {
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 30px;
+}
+.page table {
+  margin-bottom: 30px;
+  margin-top: 60px;
+}
+.page table td, .page table th {
+  border: 1px solid #f7f7f7;
+  color: #555;
+  font-size: 18px;
+  line-height: 27px;
+  padding: 15px;
+  text-align: left;
+}
+.page-about .content h3 {
+  margin-top: 60px;
+}
+.page-contact .padded {
+  overflow: auto;
+}
+.page-contact .content .starting-name, .page-contact .content .starting-value {
+  width: 50%;
+  float: left;
+}
+.page-contact .content .starting-name p {
+  font-size: 21px;
+  line-height: 36px;
+}
+.page-contact .content .starting-value input, .page-contact .content .starting-value textarea {
+  width: calc(100% - 32px);
+  font-size: 18px;
+  line-height: 36px;
+  padding: 6px 15px;
+  border: 1px solid #EEE;
+  margin-bottom: 15px;
+}
+.page-contact .content .starting-value button[type="submit"], .page-appointment form button[type="submit"] {
+  background: #3271eb;
+  color: #FFF;
+  width: 150px;
+  font-size: 18px;
+  padding: 8px 15px 6px;
+  border: 0;
+  line-height: 36px;
+  border-radius: 2px;
+}
+.page-appointment form {
+  overflow: auto;
+  text-align: center;
+}
+.page-appointment form>div {
+  width: calc(50% - 30px);
+  float: left;
+}
+.page-appointment form>div:first-child {
+  padding-right: 30px;
+}
+.page-appointment form input {
+  width: calc(100% - 32px);
+  font-size: 18px;
+  line-height: 36px;
+  padding: 6px 15px;
+  border: 0;
+  border-bottom: 2px solid #EEE;
+  margin-bottom: 15px;
+}
+.page-appointment form button[type="submit"] {
+  margin-top: 60px;
+}
+/* Footer */
+
+footer {
+  width: 100%;
+  padding: 90px 0 60px;
+  border-top: 1px solid #EEE;
+  background: #3271eb;
+  color: #FFF;
+}
+footer a {
+  text-decoration: none;
+  color: #EEE;
+}
+footer a:hover {
+  color: #FFF;
+}
+footer .container {
+  overflow: auto;
+  max-width: 1230px;
+}
+footer .container>div {
+  width: calc(50% - 60px);
+  padding-right: 60px;
+  float: left;
+}
+footer>div:last-child {
+  padding-right: 0;
+}
+footer .icon-tab {
+  overflow: auto;
+  margin-bottom: 30px;
+}
+footer .icon-tab svg {
+  width: 36px;
+  height: 36px;
+  margin-right: 15px;
+  float: left;
+}
+footer .icon-tab svg path, footer .icon-tab svg fill, footer .icon-tab svg rect, footer .icon-tab svg circle {
+  fill: #FFF;
+}
+footer .icon-tab .content {
+  width: calc(100% - 51px);
+  padding-top: 6px;
+  float: left;
+  font-size: 18px;
+  line-height: 27px;
+}
+footer .quick-links {
+  columns: 2;
+  list-style-type: none;
+  padding: 0;
+}
+footer .quick-links li {
+  padding-bottom: 0;
+}
+footer .quick-links li:before {
+  font-family: 'Heebo', sans-serif;
+  margin-right: 15px;
+  font-weight: 500;
+  content: "\003E";
+  color: #EEE;
+}
+footer .quick-links li a {
+  font-size: 18px;
+  line-height: 36px;
+}
+.footer-copy {
+  border-top: 1px solid #EEE;
+  background: #3271eb;
+  width: 100%;
+  text-align: center;
+  color: #CCC;
+  line-height: 42px;
+  font-size: 15px;
+}
+/* Media Queries */
+
+@media (max-width: 1140px) {
+  nav .menu li {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  nav .menu li a {
+    font-size: 13px;
+  }
+  .above-carousel .container>div span {
+    font-size: 10px;
+  }
+  .above-carousel .container>div span b {
+    font-size: 13px;
+  }
+  .about-doctor .content p {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .expertise ul {
+    font-size: 17px;
+  }
+  .page .content img.inline {
+    width: 420px;
+  }
+}
+@media (max-width: 930px) {
+  nav .menu {
+    display: none;
+  }
+  .burger-btn {
+    display: block;
+  }
+  .above-carousel .container>div {
+    width: calc(100% - 30px);
+  }
+  .home-carousel, .page .page-banner {
+    margin-top: 0;
+  }
+  .page .container>h1:first-child {
+    margin-top: 81px;
+  }
+  .home-carousel .VueCarousel-slide>div h1 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .below-carousel {
+    margin-top: -15px;
+  }
+  .below-carousel>div {
+    width: calc(100% - 30px);
+    padding-right: 15px;
+  }
+  .below-carousel>div span {
+    border: 0;
+  }
+  .about-doctor .padded, .expertise .padded, .treatments .padded, .appointment .padded, .page .content .padded {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about-doctor img {
+    width: 100%
+  }
+  .about-doctor .content {
+    padding-left: 0;
+    width: 100%;
+  }
+  .statistics .container>div {
+    width: 50%;
+  }
+  .statistics .container>div h2 {
+    font-size: 30px;
+  }
+  .statistics .container>div h2 span {
+    font-size: 18px;
+  }
+  .expertise .padded>div {
+    width: calc(100% - 30px);
+  }
+  .treatments .padded>div {
+    width: 100%;
+    padding-right: 0;
+  }
+  .treatments p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .appointment form>div {
+    width: 100%;
+    padding-right: 0;
+  }
+  .page .content img.inline {
+    width: 100%;
+    float: none;
+  }
+  footer .container>div {
+    width: 100%;
+    padding-right: 0;
+  }
+}
